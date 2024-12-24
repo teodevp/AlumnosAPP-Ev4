@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AlumnosAPP.Vistas.AgregarEstudiante"
+             BackgroundColor="#F1F1F1">
+
+    <StackLayout Padding="15">
+        <Label Text="Agregar Estudiante"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#2C3E50"
+               Margin="0,0,0,20"/>
+
+        <Frame BorderColor="#BDC3C7"
+               CornerRadius="10"
+               Padding="5"
+               Margin="0,10">
+            <Entry x:Name="nombreEntry"
+                   Placeholder="Nombre"
+                   BackgroundColor="White"
+                   TextColor="#34495E"/>
+        </Frame>
+
+        <Frame BorderColor="#BDC3C7"
+               CornerRadius="10"
+               Padding="5"
+               Margin="0,10">
+            <Entry x:Name="correoEntry"
+                   Placeholder="Correo"
+                   Keyboard="Email"
+                   BackgroundColor="White"
+                   TextColor="#34495E"/>
+        </Frame>
+
+        <Frame BorderColor="#BDC3C7"
+               CornerRadius="10"
+               Padding="5"
+               Margin="0,10">
+            <Entry x:Name="edadEntry"
+                   Placeholder="Edad"
+                   Keyboard="Numeric"
+                   BackgroundColor="White"
+                   TextColor="#34495E"/>
+        </Frame>
+
+        <Frame BorderColor="#BDC3C7"
+               CornerRadius="10"
+               Padding="5"
+               Margin="0,10">
+            <Entry x:Name="cursoEntry"
+                   Placeholder="Curso"
+                   BackgroundColor="White"
+                   TextColor="#34495E"/>
+        </Frame>
+
+        <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center" IsVisible="{Binding IsNuevoEstudiante}">
+            <Switch x:Name="activoSwitch" />
+            <Label Text="Activo" VerticalOptions="Center" TextColor="#34495E"/>
+        </StackLayout>
+
+        <Button Text="Guardar"
+                BackgroundColor="#00c063"
+                TextColor="White"
+                CornerRadius="5"
+                Padding="10"
+                FontSize="16"
+                Clicked="OnSaveButtonClicked"
+                Margin="0,20"/>
+    </StackLayout>
+</ContentPage>

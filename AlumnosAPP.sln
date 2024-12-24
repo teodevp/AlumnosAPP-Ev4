@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlumnosAPP", "AlumnosAPP\AlumnosAPP.csproj", "{C1795C9C-BCD2-4186-83DA-2752E3D84320}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroAlumnos.Modelos", "RegistroAlumnos.Modelos\RegistroAlumnos.Modelos.csproj", "{5554E810-0174-4463-87AD-85F8649B32A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1795C9C-BCD2-4186-83DA-2752E3D84320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1795C9C-BCD2-4186-83DA-2752E3D84320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1795C9C-BCD2-4186-83DA-2752E3D84320}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C1795C9C-BCD2-4186-83DA-2752E3D84320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1795C9C-BCD2-4186-83DA-2752E3D84320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1795C9C-BCD2-4186-83DA-2752E3D84320}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5554E810-0174-4463-87AD-85F8649B32A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5554E810-0174-4463-87AD-85F8649B32A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5554E810-0174-4463-87AD-85F8649B32A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5554E810-0174-4463-87AD-85F8649B32A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

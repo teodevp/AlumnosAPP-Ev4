@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AlumnosAPP.Vistas.ListarAlumnos"
+             Title="Listado de Estudiantes">
+    <ScrollView>
+        <Grid Padding="10" RowSpacing="20" ColumnSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+
+            <SearchBar Placeholder="Buscar por nombre o correo"
+                       x:Name="filtroSearchBar"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       TextChanged="filtroSearchBar_TextChanged"/>
+
+            <Button Text="Nuevo Estudiante"
+                    x:Name="NuevoEstudianteBoton"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="#4900ff"
+                    TextColor="White"
+                    CornerRadius="5"
+                    Clicked="NuevoEstudianteBoton_Clicked"/>
+
+            <CollectionView x:Name="listaCollection"
+                            ItemsSource="{Binding ListaAlumnos}"
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnSpacing="10" Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.RowSpan="4"
+                                   Source="profile.jpg"
+                                   Aspect="AspectFill"
+                                   HeightRequest="60"
+                                   WidthRequest="60"/>
+
+                            <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   Text="{Binding Nombre}"
+                                   FontAttributes="Bold"
+                                   FontSize="20"/>
+                            <Label Grid.Column="1"
+                                   Grid.Row="1"
+                                   Text="{Binding Correo}"
+                                   FontSize="16"/>
+
+                            <Label Grid.Column="1"
+                                   Grid.Row="2"
+                                   Text="{Binding Edad, StringFormat='Edad: {0}'}"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   Padding="0,5,0,0"/>
+
+                            <Label Grid.Column="1"
+                                   Grid.Row="3"
+                                   Text="{Binding Curso, StringFormat='Curso: {0}'}"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   Padding="0,5,0,0"/>
+
+                            <ImageButton x:Name="editarButton"
+                                         Grid.Column="2"
+                                         Source="edit_icon.png"
+                                         BackgroundColor="Transparent"
+                                         HeightRequest="25"
+                                         WidthRequest="25"
+                                         CommandParameter="{Binding .}"
+                                         Clicked="editarButton_Clicked"/>
+
+                            <ImageButton x:Name="deshabilitarButton"
+                                         Grid.Column="3"
+                                         Source="disable.png"
+                                         BackgroundColor="Transparent"
+                                         HeightRequest="25"
+                                         WidthRequest="25"
+                                         CommandParameter="{Binding .}"
+                                         Clicked="deshabilitarButton_Clicked"
+                                         IsEnabled="{Binding IsButtonEnabled}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
+</ContentPage>
